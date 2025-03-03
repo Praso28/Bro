@@ -46,11 +46,12 @@ RUN python3.13 --version
 RUN ln -s /usr/local/bin/python3.13 /usr/local/bin/python && \
     ln -s /usr/local/bin/pip3.13 /usr/local/bin/pip
 
+# Install any Python dependencies (if you have a requirements.txt file)
+RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
+
 # Copy the application files from the host to the container
 COPY . .
 
-# Install any Python dependencies (if you have a requirements.txt file)
-RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
 
 ################################################################################
 # Use the deps stage as the final stage
