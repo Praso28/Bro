@@ -1,4 +1,4 @@
-def main(input_file_name = "testcase.txt", output_file_name = "output.txt"):
+def main(input_file_name = "/usr/src/app/src/testcase.txt", output_file_name = "output.txt"):
     input_file = open(input_file_name, "r")
 
     line = input_file.readline()
@@ -7,3 +7,7 @@ def main(input_file_name = "testcase.txt", output_file_name = "output.txt"):
     output_file = open(output_file_name, "w")
     output_file.write(line)
     output_file.close()
+    input_file.close()
+
+if __name__ == "__main__":
+    main()

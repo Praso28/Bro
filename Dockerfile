@@ -49,6 +49,9 @@ RUN ln -s /usr/local/bin/python3.13 /usr/local/bin/python && \
 # Install any Python dependencies (if you have a requirements.txt file)
 RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
 
+ENV PYTHONUNBUFFERED=1
+ENV RUST_LOG=debug
+
 # Copy the application files from the host to the container
 COPY . .
 
@@ -59,9 +62,11 @@ FROM deps as final
 
 # Create the testcases directory
 RUN mkdir -p /usr/src/app/testcases
+RUN mkdir -p /usr/src/app/src
 
 # Declare the volume
 VOLUME /usr/src/app/testcases
+VOLUME /usr/src/app/src
 
 # Set the command to run your application (replace 'src/main.py' with your main file)
 # CMD ["python3.13", "-X", "gil=0", "src/main.py"]
