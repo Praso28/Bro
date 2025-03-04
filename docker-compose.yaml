@@ -1,5 +1,5 @@
 services:
-  myapp:
+  boilerplate:
     build:
       context: .
       target: final

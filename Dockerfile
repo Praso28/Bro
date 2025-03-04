@@ -46,15 +46,17 @@ RUN python3.13 --version
 RUN ln -s /usr/local/bin/python3.13 /usr/local/bin/python && \
     ln -s /usr/local/bin/pip3.13 /usr/local/bin/pip
 
+RUN pip install pyperf --no-cache-dir
+
 # Install any Python dependencies (if you have a requirements.txt file)
 RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
 
 ENV PYTHONUNBUFFERED=1
 ENV RUST_LOG=debug
+ENV RUST_BACKTRACE=0
 
 # Copy the application files from the host to the container
 COPY . .
-
 
 ################################################################################
 # Use the deps stage as the final stage
@@ -64,7 +66,6 @@ FROM deps as final
 RUN mkdir -p /usr/src/app/testcases
 RUN mkdir -p /usr/src/app/src
 
-# Declare the volume
 VOLUME /usr/src/app/testcases
 VOLUME /usr/src/app/src
 
