@@ -65,9 +65,11 @@ FROM deps as final
 # Create the testcases directory
 RUN mkdir -p /usr/src/app/testcases
 RUN mkdir -p /usr/src/app/src
+RUN mkdir -p /usr/src/app/output
 
 VOLUME /usr/src/app/testcases
 VOLUME /usr/src/app/src
+VOLUME /usr/src/app/output
 
 # Set the command to run your application (replace 'src/main.py' with your main file)
 # CMD ["python3.13", "-X", "gil=0", "src/main.py"]

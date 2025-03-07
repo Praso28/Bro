@@ -8,3 +8,4 @@ services:
     volumes:
       - ./testcases:/usr/src/app/testcases
       - ./src:/usr/src/app/src
+      - ./output:/usr/src/app/output
