@@ -16,7 +16,6 @@ ENV RUST_BACKTRACE=0
 
 COPY . .
 
-# Final runtime stage
 FROM base as final
 
 RUN mkdir -p /usr/src/app/testcases /usr/src/app/src /usr/src/app/output

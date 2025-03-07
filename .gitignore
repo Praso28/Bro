@@ -8,4 +8,4 @@ venv
 */bench.json
 */bench_*.json
 */status.*
-*/main_1.py
+*/main_*.py
