@@ -1,5 +1,7 @@
 services:
   boilerplate:
+    image: ${CONTAINER_NAME}
+    container_name: temp_${CONTAINER_NAME}
     build:
       context: .
       target: final
