@@ -9,3 +9,4 @@ venv
 */bench_*.json
 */status.*
 */main_*.py
+/output/
