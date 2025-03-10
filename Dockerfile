@@ -22,8 +22,10 @@ USER root
 RUN mkdir -p /usr/src/app/testcases /usr/src/app/src /usr/src/app/output
 RUN test -f /usr/src/app/src/main.py || (echo "main.py missing" && exit 1)
 
+RUN chmod 755 /usr/src/app/src/main.py
+
 VOLUME /usr/src/app/testcases
-VOLUME /usr/src/app/src
+# VOLUME /usr/src/app/src
 VOLUME /usr/src/app/output
 
 CMD ["./daemon"]
