@@ -1,5 +1,4 @@
-# Use prebuilt base image
-FROM steakfisher1/im-in-so-much-pain-compilation-python-nogil:3.13 as base
+FROM steakfisher1/im-in-so-much-pain-compilation-python-nogil:3.13 AS base
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc python3-dev libffi-dev \
@@ -15,6 +14,8 @@ ENV RUST_LOG=debug
 ENV RUST_BACKTRACE=0
 
 COPY . .
+
+USER root
 
 FROM base as final
 
