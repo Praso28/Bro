@@ -1,5 +1,7 @@
 services:
   boilerplate:
+    image: ${CONTAINER_NAME}
+    container_name: temp_${CONTAINER_NAME}
     build:
       context: .
       target: final
@@ -7,5 +9,13 @@ services:
      - LEVEL 
     volumes:
       - ./testcases:/usr/src/app/testcases
-      - ./src:/usr/src/app/src
+
+##############################################
+###### UNCOMMENT THIS FOR LOCAL TESTING ######
+
+      # - ./src:/usr/src/app/src
+
+##############################################
+##############################################
+      
       - ./output:/usr/src/app/output

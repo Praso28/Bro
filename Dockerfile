@@ -1,5 +1,4 @@
-# Use prebuilt base image
-FROM steakfisher1/im-in-so-much-pain-compilation-python-nogil:3.13 as base
+FROM steakfisher1/im-in-so-much-pain-compilation-python-nogil:3.13 AS base
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc python3-dev libffi-dev \
@@ -18,10 +17,20 @@ COPY . .
 
 FROM base as final
 
+USER root
+
 RUN mkdir -p /usr/src/app/testcases /usr/src/app/src /usr/src/app/output
+RUN test -f /usr/src/app/src/main.py || (echo "main.py missing" && exit 1)
 
 VOLUME /usr/src/app/testcases
-VOLUME /usr/src/app/src
 VOLUME /usr/src/app/output
+
+##############################################
+###### UNCOMMENT THIS FOR LOCAL TESTING ######
+
+# VOLUME /usr/src/app/src
+
+##############################################
+##############################################
 
 CMD ["./daemon"]
