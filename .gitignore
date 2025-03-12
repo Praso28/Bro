@@ -3,7 +3,7 @@
 /target
 /testcases
 venv
-*/testcase.txt
+/testcase.txt
 */output.txt
 */bench.json
 */bench_*.json
