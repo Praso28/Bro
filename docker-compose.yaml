@@ -9,13 +9,6 @@ services:
      - LEVEL 
     volumes:
       - ./testcases:/usr/src/app/testcases
-
-##############################################
-###### UNCOMMENT THIS FOR LOCAL TESTING ######
-
-      # - ./src:/usr/src/app/src
-
-##############################################
-##############################################
+#      - ./src:/usr/src/app/src # UNCOMMENT THIS FOR LOCAL TESTING
       
       - ./output:/usr/src/app/output
