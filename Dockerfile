@@ -28,7 +28,7 @@ VOLUME /usr/src/app/output
 ##############################################
 ###### UNCOMMENT THIS FOR LOCAL TESTING ######
 
-VOLUME /usr/src/app/src
+# VOLUME /usr/src/app/src
 
 ##############################################
 ##############################################
