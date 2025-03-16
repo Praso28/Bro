@@ -14,7 +14,6 @@
 ## Contest Protocol
 - Participants must submit solutions within the specified deadlines.
 - All submissions will be evaluated using the provided test cases and additional hidden test cases.
-- Partial scoring may be awarded for solutions that pass some test cases.
 - The decision of the judges will be final and binding in all matters.
 - The organizers reserve the right to disqualify any participant at any point of the contest.
 - Changes to contest rules may be announced during the competition. Participants are responsible for staying updated.
