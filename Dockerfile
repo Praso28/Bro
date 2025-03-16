@@ -15,7 +15,7 @@ ENV RUST_BACKTRACE=0
 
 COPY . .
 
-FROM base as final
+FROM base AS final
 
 USER root
 
