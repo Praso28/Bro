@@ -170,6 +170,7 @@ Find your commit and click **Upgrade**.
 - This runs your code on a **higher-spec machine (4 vCPU + 16GB RAM) with LEVEL=15**.  
 - **Only upgraded submissions count towards the leaderboard.**  
 - **You can request only ONE commit upgrade per hour.**  
+- **You cannot request an upgrade within the first hour of creating your account.**  
 - If you upgrade multiple commits, **the one with the fastest runtime will be considered for the leaderboard**.  
 
 ## **10. Execution Time Limits & Rules**  
