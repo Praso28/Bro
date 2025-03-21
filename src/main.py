@@ -1,14 +1,26 @@
-def main(input_file_name = "testcase.txt", output_file_name = "output.txt"):
-    input_file = open(input_file_name, "r")
-    output_file = open(output_file_name, "w")
+import sys
+from collections import defaultdict
+from math import ceil
 
-    first_line = input_file.readline().strip()
-    first_line = first_line.split(";")
+def process_file():
+    city_data = defaultdict(lambda: [float("inf"), 0, float("-inf"), 0]) 
+    data = sys.stdin.read().splitlines()
 
-    output_file.write(f"{first_line[0]}={first_line[1]}/{1}/{1}\n")
+    for line in data:
+        city, score = line.split(";")
+        score = float(score)
+        score_int = int(score * 10)  
 
-    output_file.close()
-    input_file.close()
+        stats = city_data[city]
+        stats[0] = min(stats[0], score)   
+        stats[1] += score_int             
+        stats[2] = max(stats[2], score)   
+        stats[3] += 1
+                         
+    sys.stdout.write("\n".join(
+        f"{city}={data[0]:.1f}/{ceil((data[1] / data[3]) * 0.1 * 10) / 10:.1f}/{data[2]:.1f}"
+        for city, data in sorted(city_data.items())
+    ) + "\n")
 
 if __name__ == "__main__":
-    main()
+    process_file()
