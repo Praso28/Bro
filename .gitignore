@@ -4,9 +4,6 @@
 /testcases
 venv
 /testcase.txt
-*/output.txt
 */bench.json
 */bench_*.json
 */status.*
-*/main_*.py
-/output/
